@@ -1,0 +1,1357 @@
+/* ==========================================================
+   LAW OFFICE CMS - ADMIN PANEL
+   Bootstrap 5 + Core PHP
+========================================================== */
+
+
+/* ==========================================================
+   RESET
+========================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   BODY
+========================================================== */
+
+body {
+
+  background: #f4f6fb;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  color: #333;
+
+  overflow-x: hidden;
+
+}
+
+
+/* ==========================================================
+   LINKS
+========================================================== */
+
+a {
+
+  text-decoration: none;
+
+}
+
+ul {
+
+  list-style: none;
+
+  margin: 0;
+
+  padding: 0;
+
+}
+
+
+/* ==========================================================
+   SIDEBAR
+========================================================== */
+
+.sidebar {
+
+  position: fixed;
+
+  top: 0;
+
+  left: 0;
+
+  width: 260px;
+
+  height: 100vh;
+
+  background: #1f2937;
+
+  color: #fff;
+
+  overflow-y: auto;
+
+  z-index: 1050;
+
+  transition: .3s;
+
+}
+
+
+/* ==========================================================
+   LOGO
+========================================================== */
+
+.sidebar .logo {
+
+  height: 80px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, .08);
+
+}
+
+.sidebar .logo h3 {
+
+  font-size: 28px;
+
+  margin: 0;
+
+}
+
+.sidebar .logo h2 {
+
+  font-size: 28px;
+
+  font-weight: 700;
+
+  margin: 0;
+
+}
+
+
+/* ==========================================================
+   MENU
+========================================================== */
+
+.sidebar-menu {
+
+  padding: 20px 0;
+
+}
+
+.sidebar-menu li {
+
+  margin-bottom: 6px;
+
+}
+
+.sidebar-menu li a {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 13px 24px;
+
+  color: #d1d5db;
+
+  font-size: 15px;
+
+  transition: .25s;
+
+}
+
+.sidebar-menu li a i {
+
+  font-size: 18px;
+
+  width: 22px;
+
+  text-align: center;
+
+}
+
+
+/* ==========================================================
+   ACTIVE MENU
+========================================================== */
+
+.sidebar-menu li a:hover {
+
+  background: #374151;
+
+  color: #fff;
+
+}
+
+.sidebar-menu li a.active {
+
+  background: #0d6efd;
+
+  color: #fff;
+
+  border-left: 4px solid #fff;
+
+}
+
+
+/* ==========================================================
+   SIDEBAR FOOTER
+========================================================== */
+
+.sidebar-footer {
+
+  position: absolute;
+
+  bottom: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  border-top: 1px solid rgba(255, 255, 255, .08);
+
+}
+
+.sidebar-footer a {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 16px 24px;
+
+  color: #ffb4b4;
+
+  transition: .3s;
+
+}
+
+.sidebar-footer a:hover {
+
+  background: #dc3545;
+
+  color: #fff;
+
+}
+
+
+/* ==========================================================
+   MAIN CONTENT
+========================================================== */
+
+.main-content {
+
+  margin-left: 260px;
+
+  min-height: 100vh;
+
+  padding: 25px;
+
+  transition: .3s;
+
+}
+
+/* ==========================================================
+   TOPBAR
+========================================================== */
+
+.topbar {
+
+  background: #fff;
+
+  border-radius: 15px;
+
+  padding: 15px 25px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 25px;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
+
+}
+
+.topbar-left {
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+.topbar-title {
+
+  font-size: 28px;
+
+  font-weight: 700;
+
+  color: #222;
+
+  margin-bottom: 2px;
+
+}
+
+.topbar-subtitle {
+
+  color: #6c757d;
+
+  font-size: 14px;
+
+}
+
+.topbar-right {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+}
+
+
+/* ==========================================================
+   SEARCH BOX
+========================================================== */
+
+.search-box {
+
+  width: 280px;
+
+}
+
+.search-box .input-group {
+
+  border: 1px solid #dee2e6;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+
+}
+
+.search-box .input-group-text {
+
+  background: #fff;
+
+  border: none;
+
+}
+
+.search-box .form-control {
+
+  border: none;
+
+  box-shadow: none;
+
+  padding: 10px;
+
+}
+
+.search-box .form-control:focus {
+
+  box-shadow: none;
+
+}
+
+
+/* ==========================================================
+   NOTIFICATION
+========================================================== */
+
+.notification-btn {
+
+  width: 45px;
+
+  height: 45px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: #f8f9fa;
+
+  position: relative;
+
+  transition: .3s;
+
+}
+
+.notification-btn:hover {
+
+  background: #e9ecef;
+
+}
+
+.notification-btn i {
+
+  font-size: 20px;
+
+}
+
+.notification-count {
+
+  position: absolute;
+
+  top: -5px;
+
+  right: -3px;
+
+  width: 22px;
+
+  height: 22px;
+
+  background: #dc3545;
+
+  color: #fff;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+}
+
+
+/* ==========================================================
+   TODAY BOX
+========================================================== */
+
+.today-box {
+
+  text-align: center;
+
+}
+
+.today-box small {
+
+  display: block;
+
+  color: #6c757d;
+
+  font-size: 12px;
+
+}
+
+.today-box strong {
+
+  font-size: 15px;
+
+  color: #222;
+
+}
+
+
+/*====================================================
+  Admin Profile Page
+====================================================*/
+
+.profile-card {
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.profile-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #0d6efd;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .15);
+  transition: .3s;
+}
+
+.profile-img:hover {
+  transform: scale(1.04);
+}
+
+.profile-card .table th {
+  background: #f8f9fa;
+  width: 30%;
+  font-weight: 600;
+}
+
+.profile-card .table td,
+.profile-card .table th {
+  padding: 15px;
+  vertical-align: middle;
+}
+
+.profile-card .card-header {
+  background: #fff;
+  font-weight: 600;
+}
+
+.profile-card .btn {
+  border-radius: 10px;
+  padding: 11px;
+  font-weight: 500;
+}
+
+@media(max-width:991px) {
+
+  .profile-img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .profile-card .table th {
+    width: 40%;
+  }
+
+}
+
+@media(max-width:767px) {
+
+  .profile-card .table th,
+  .profile-card .table td {
+    display: block;
+    width: 100%;
+  }
+
+  .profile-card .table tr {
+    display: block;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #eee;
+  }
+
+}
+
+
+/* ==========================================================
+   PROFILE
+========================================================== */
+
+
+
+.profile-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 50px;
+  padding: 6px 12px;
+  transition: .3s;
+}
+
+.profile-btn:hover {
+  background: #f8f9fa;
+}
+
+.profile-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #0d6efd;
+}
+
+.profile-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #212529;
+}
+
+.profile-btn i {
+  font-size: 13px;
+}
+
+
+/* ==========================================================
+   DROPDOWN
+========================================================== */
+
+.dropdown-menu {
+
+  border: none;
+
+  border-radius: 15px;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, .12);
+
+  min-width: 230px;
+
+}
+
+.dropdown-item {
+
+  padding: 10px 18px;
+
+  font-size: 14px;
+
+}
+
+.dropdown-item:hover {
+
+  background: #f8f9fa;
+
+}
+
+/* ==========================================================
+   PAGE HEADER
+========================================================== */
+
+.page-header {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 25px;
+
+  flex-wrap: wrap;
+
+  gap: 15px;
+
+}
+
+.page-title {
+
+  font-size: 30px;
+
+  font-weight: 700;
+
+  color: #222;
+
+  margin-bottom: 5px;
+
+}
+
+.page-subtitle {
+
+  color: #6c757d;
+
+  font-size: 14px;
+
+}
+
+
+/* ==========================================================
+   WELCOME CARD
+========================================================== */
+
+.welcome-card {
+
+  background: linear-gradient(135deg, #0d6efd, #0b5ed7);
+
+  color: #fff;
+
+  border-radius: 18px;
+
+  padding: 30px;
+
+  margin-bottom: 30px;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, .12);
+
+}
+
+.welcome-card h2 {
+
+  font-size: 30px;
+
+  font-weight: 700;
+
+  margin-bottom: 10px;
+
+}
+
+.welcome-card p {
+
+  font-size: 15px;
+
+  opacity: .95;
+
+}
+
+.welcome-card .badge {
+
+  padding: 10px 14px;
+
+  font-size: 13px;
+
+}
+
+
+/* ==========================================================
+   COMMON CARD
+========================================================== */
+
+.card {
+
+  border: none;
+
+  border-radius: 15px;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
+
+  overflow: hidden;
+
+}
+
+.card-header {
+
+  background: #fff;
+
+  border-bottom: 1px solid #eee;
+
+  padding: 18px 20px;
+
+  font-weight: 600;
+
+}
+
+.card-body {
+
+  padding: 20px;
+
+}
+
+
+/* ==========================================================
+   DASHBOARD CARD
+========================================================== */
+
+.dashboard-card {
+
+  transition: .3s;
+
+  height: 100%;
+
+}
+
+.dashboard-card:hover {
+
+  transform: translateY(-8px);
+
+  box-shadow: 0 15px 30px rgba(0, 0, 0, .12);
+
+}
+
+.dashboard-card .card-body {
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+
+  padding: 30px 20px;
+
+}
+
+.dashboard-card i {
+
+  font-size: 42px;
+
+  margin-bottom: 15px;
+
+}
+
+.dashboard-card h5 {
+
+  font-size: 18px;
+
+  font-weight: 600;
+
+  margin-bottom: 10px;
+
+}
+
+.dashboard-card h2 {
+
+  font-size: 32px;
+
+  font-weight: 700;
+
+  margin-bottom: 8px;
+
+}
+
+.dashboard-card small {
+
+  color: #6c757d;
+
+}
+
+.dashboard-card .btn {
+
+  margin-top: 18px;
+
+}
+
+
+/* ==========================================================
+   STATS CARD
+========================================================== */
+
+.stats-card {
+
+  border: none;
+
+  border-radius: 15px;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
+
+}
+
+.stats-card .card-body {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+}
+
+.icon-box {
+
+  width: 60px;
+
+  height: 60px;
+
+  border-radius: 12px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  color: #fff;
+
+  font-size: 24px;
+
+}
+
+
+/* ==========================================================
+   COLORS
+========================================================== */
+
+.bg-blue {
+
+  background: #0d6efd;
+
+}
+
+.bg-green {
+
+  background: #198754;
+
+}
+
+.bg-red {
+
+  background: #dc3545;
+
+}
+
+.bg-warning {
+
+  background: #ffc107;
+
+}
+
+.bg-info {
+
+  background: #0dcaf0;
+
+}
+
+.bg-dark {
+
+  background: #212529;
+
+}
+
+/* ==========================================================
+   TABLE
+========================================================== */
+
+.table {
+
+  margin-bottom: 0;
+
+  vertical-align: middle;
+
+}
+
+.table thead {
+
+  background: #212529;
+
+  color: #fff;
+
+}
+
+.table thead th {
+
+  padding: 15px;
+
+  border: none;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+
+}
+
+.table tbody td {
+
+  padding: 15px;
+
+  border-color: #eef1f5;
+
+  vertical-align: middle;
+
+}
+
+.table-hover tbody tr {
+
+  transition: .25s;
+
+}
+
+.table-hover tbody tr:hover {
+
+  background: #f8f9fc;
+
+}
+
+
+/* ==========================================================
+   TABLE IMAGE
+========================================================== */
+
+.table img {
+
+  width: 60px;
+
+  height: 60px;
+
+  object-fit: cover;
+
+  border-radius: 10px;
+
+  border: 2px solid #f1f1f1;
+
+}
+
+
+/* ==========================================================
+   BUTTONS
+========================================================== */
+
+.btn {
+
+  border-radius: 10px;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  transition: .3s;
+
+}
+
+.btn:hover {
+
+  transform: translateY(-2px);
+
+}
+
+.btn-sm {
+
+  padding: 6px 14px;
+
+}
+
+
+/* ==========================================================
+   FORMS
+========================================================== */
+
+.form-label {
+
+  font-weight: 600;
+
+  margin-bottom: 8px;
+
+}
+
+.form-control,
+
+.form-select {
+
+  border-radius: 10px;
+
+  padding: 10px 14px;
+
+  font-size: 14px;
+
+  border: 1px solid #dcdfe4;
+
+}
+
+.form-control:focus,
+
+.form-select:focus {
+
+  border-color: #0d6efd;
+
+  box-shadow: 0 0 0 .2rem rgba(13, 110, 253, .15);
+
+}
+
+textarea.form-control {
+
+  resize: vertical;
+
+}
+
+
+/* ==========================================================
+   SEARCH CARD
+========================================================== */
+
+.search-card {
+
+  border: none;
+
+  border-radius: 15px;
+
+}
+
+
+/* ==========================================================
+   BADGES
+========================================================== */
+
+.badge {
+
+  padding: 8px 12px;
+
+  font-size: 12px;
+
+  border-radius: 30px;
+
+}
+
+
+/* ==========================================================
+   ALERTS
+========================================================== */
+
+.alert {
+
+  border: none;
+
+  border-radius: 12px;
+
+  box-shadow: 0 5px 12px rgba(0, 0, 0, .05);
+
+}
+
+
+/* ==========================================================
+   SECTION TITLE
+========================================================== */
+
+.section-title {
+
+  font-size: 22px;
+
+  font-weight: 700;
+
+  color: #222;
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media(max-width:991px) {
+
+  .sidebar {
+
+    left: -260px;
+
+  }
+
+  .sidebar.show {
+
+    left: 0;
+
+  }
+
+  .main-content {
+
+    margin-left: 0;
+
+    padding: 18px;
+
+  }
+
+  .topbar {
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+  }
+
+  .topbar-right {
+
+    width: 100%;
+
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+
+  }
+
+  .search-box {
+
+    width: 100%;
+
+  }
+
+}
+
+@media(max-width:768px) {
+
+  .page-title {
+
+    font-size: 24px;
+
+  }
+
+  .topbar-title {
+
+    font-size: 22px;
+
+  }
+
+  .welcome-card {
+
+    padding: 20px;
+
+  }
+
+  .dashboard-card .card-body {
+
+    padding: 20px;
+
+  }
+
+  .table {
+
+    font-size: 13px;
+
+  }
+
+  .table img {
+
+    width: 50px;
+
+    height: 50px;
+
+  }
+
+}
+
+@media(max-width:576px) {
+
+  .profile-name,
+
+  .profile-role,
+
+  .today-box {
+
+    display: none;
+
+  }
+
+}
+
+
+/* ==========================================================
+   SCROLLBAR
+========================================================== */
+
+::-webkit-scrollbar {
+
+  width: 8px;
+
+}
+
+::-webkit-scrollbar-thumb {
+
+  background: #c5c5c5;
+
+  border-radius: 20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+
+  background: #9d9d9d;
+
+}
+
+/*=====================================================
+Practice Area Dashboard Card
+=====================================================*/
+
+.dashboard-card {
+
+  border: none;
+
+  border-radius: 18px;
+
+  background: #ffffff;
+
+  transition: 0.3s ease;
+
+  overflow: hidden;
+
+}
+
+.dashboard-card:hover {
+
+  transform: translateY(-5px);
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .12);
+
+}
+
+.dashboard-card .card-body {
+
+  padding: 25px;
+
+}
+
+.dashboard-card h6 {
+
+  color: #6c757d;
+
+  font-size: 14px;
+
+  margin-bottom: 8px;
+
+  font-weight: 600;
+
+}
+
+.dashboard-card h3 {
+
+  font-size: 34px;
+
+  font-weight: 700;
+
+  color: #212529;
+
+  margin-bottom: 15px;
+
+}
+
+/*=====================================================
+Dashboard Icon
+=====================================================*/
+
+.icon-box {
+
+  width: 65px;
+
+  height: 65px;
+
+  border-radius: 15px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  font-size: 28px;
+
+  flex-shrink: 0;
+
+}
+
+.icon-box i {
+
+  color: #fff;
+
+}
+
+/*=====================================================
+Manage Button
+=====================================================*/
+
+.dashboard-card .btn {
+
+  border-radius: 10px;
+
+  font-weight: 600;
+
+  padding: 8px 18px;
+
+  transition: .3s;
+
+}
+
+.dashboard-card .btn:hover {
+
+  transform: translateX(3px);
+
+}
+
+/*=====================================================
+Responsive
+=====================================================*/
+
+@media(max-width:768px) {
+
+  .dashboard-card {
+
+    margin-bottom: 20px;
+
+  }
+
+  .icon-box {
+
+    width: 55px;
+
+    height: 55px;
+
+    font-size: 24px;
+
+  }
+
+  .dashboard-card h3 {
+
+    font-size: 28px;
+
+  }
+
+}
